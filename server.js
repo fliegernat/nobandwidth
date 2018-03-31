@@ -6,7 +6,8 @@ var fs = require('fs');
 
 var config = {
     contentDirectory: 'content',
-    maxPostsOnPage: 5
+    maxPostsOnPage: 5,
+    port: process.env.PORT || 3000
 }
 
 app.set('view engine', 'pug');
@@ -30,4 +31,6 @@ app.get('/', function (req, res) {
     res.render('templates/base.pug', { 'content': renderedFiles });
 });
 
-app.listen(3000);
+app.listen(config.port, function () {
+    console.log('Server started on port ' + config.port);
+});
