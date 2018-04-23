@@ -1,21 +1,9 @@
 {
-  "name": "nobandwidth",
-  "version": "1.0.0",
-  "description": "",
-  "engines": {
-    "node": "8.9.4"
-  },
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "test": "exit 0"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
-    "npm": "^5.8.0",
-    "pug": "^2.0.3",
-    "showdown": "^1.8.6"
-  }
+    "moment": "2.3.x",
+    "typogr": "0.5.x",
+    "underscore": "1.4.x"
+  },
+  "private": "true"
 }

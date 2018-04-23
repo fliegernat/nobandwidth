@@ -1,36 +1,9 @@
-var express = require('express');
-var app = express();
-var showdown = require('showdown');
-var converter = new showdown.Converter();
-var fs = require('fs');
+const express = require('express');
+const path = require('path');
+const app = express();
+const port = process.env.PORT || 3000;
 
-var config = {
-    contentDirectory: 'content',
-    maxPostsOnPage: 5,
-    port: process.env.PORT || 3000
-}
-
-app.set('view engine', 'pug');
-
-app.get('/', function (req, res) {
-    var files = fs.readdirSync(config.contentDirectory);
-    var fileInfo = files.map(function (file) {
-        return {
-            name: file,
-            time: fs.statSync(config.contentDirectory + '/' + file).mtime.getTime()
-        }
-    });
-    var orderedFiles = fileInfo.sort(function (a, b) {
-        return b.time - a.time;
-    });
-    orderedFiles = orderedFiles.slice(0, config.maxPostsOnPage);
-    var renderedFiles = orderedFiles.map(function (file) {
-        var markdown = fs.readFileSync(config.contentDirectory + '/' + file.name, 'utf-8');
-        return converter.makeHtml(markdown);
-    });
-    res.render('templates/base.pug', { 'content': renderedFiles });
-});
-
-app.listen(config.port, function () {
-    console.log('Server started on port ' + config.port);
+app.use(express.static(path.join(__dirname, '/build')));
+app.listen(port, function () {
+  console.log('Listening on port ' + port);
 });
