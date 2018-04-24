@@ -8,14 +8,11 @@ block content
       header
         p.date
           span= moment.utc(article.date).format('DD. MMMM YYYY')
-        h2
+        h1
           a(href=article.url)= article.title
       section.content
-        if article.intro.length > 0
-          != typogr(article.intro).typogrify()
-        if article.hasMore
-          p.more
-            a(href=article.url) more
+        != typogr(article.html).typogrify()
+      hr.separator
 
 block prepend footer
   div.nav
