@@ -1,4 +1,1 @@
-
-# Blog
-
-The default [wintersmith](https://github.com/jnordberg/wintersmith) template
+[lo](http://thisdayintechhistory.com/10/29/first-message-on-the-internet/)
