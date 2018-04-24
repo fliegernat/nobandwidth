@@ -1,2 +1,0 @@
-all:
-	wintersmith build .
