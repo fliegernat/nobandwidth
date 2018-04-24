@@ -3,7 +3,8 @@
     "express": "^4.16.3",
     "moment": "2.3.x",
     "typogr": "0.5.x",
-    "underscore": "1.4.x"
+    "underscore": "1.4.x",
+    "wintersmith": "^2.4.1"
   },
   "private": "true"
 }
