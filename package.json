@@ -10,5 +10,8 @@
     "typogr": "0.5.x",
     "underscore": "1.4.x",
     "wintersmith": "^2.4.1"
+  },
+  "scripts": {
+    "install": "sh _install.sh"
   }
 }
